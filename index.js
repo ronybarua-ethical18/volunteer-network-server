@@ -20,6 +20,7 @@ client.connect(err => {
     
     app.post('/addEvent', (req, res) =>{
         const newEvent = req.body;
+        console.log(newEvent);
        eventCollection.insertOne(newEvent)
        .then(result =>{
            console.log('inserted result: ', result.insertedCount);
